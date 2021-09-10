@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: gainsboro;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apple.statistics.blogstatistics.SettingController">
+   <children>
+      <HBox alignment="BOTTOM_RIGHT" layoutX="205.0" layoutY="166.0" prefHeight="25.0" prefWidth="323.0" spacing="12.0" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="14.0">
+         <children>
+            <Button fx:id="ok" mnemonicParsing="false" onMouseClicked="#ok" prefWidth="80.0" text="OK" />
+            <Button fx:id="cancel" cancelButton="true" mnemonicParsing="false" onMouseClicked="#cancel" prefWidth="80.0" text="キャンセル" />
+            <Button fx:id="apply" mnemonicParsing="false" onMouseClicked="#apply" prefWidth="80.0" text="適用" />
+         </children>
+      </HBox>
+      <HBox layoutX="24.0" layoutY="31.0" spacing="12.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="60.0" text="データベース" />
+            <TextField fx:id="db_path" prefHeight="25.0" prefWidth="312.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="db_path_reference" mnemonicParsing="false" onMouseClicked="#DbPathReference" prefWidth="60.0" text="参照" />
+         </children>
+      </HBox>
+      <HBox layoutX="22.0" layoutY="75.0" spacing="12.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="60.0" text="サイトURL" />
+            <TextField fx:id="siteUrl" prefHeight="25.0" prefWidth="312.0" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onMouseClicked="#DbPathReference" prefWidth="60.0" text="参照" visible="false" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

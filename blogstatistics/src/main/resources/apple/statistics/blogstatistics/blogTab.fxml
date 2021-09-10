@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apple.statistics.blogstatistics.BlogTabController">
+   <children>
+      <HBox prefHeight="37.0" prefWidth="444.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="8.0">
+         <children>
+            <Label text="場所">
+               <HBox.margin>
+                  <Insets left="4.0" right="8.0" top="2.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="searchPlaceString" prefHeight="25.0" prefWidth="245.0">
+               <HBox.margin>
+                  <Insets right="16.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchTable" text="検索">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="tableView" prefHeight="545.0" prefWidth="868.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="44.0">
+        <columns>
+          <TableColumn fx:id="cullumnName" prefWidth="260.0" text="場所" />
+          <TableColumn minWidth="0.0" prefWidth="600.0" text="アクセス数">
+               <columns>
+                  <TableColumn fx:id="cullumnTotal" minWidth="0.0" prefWidth="147.0" text="トータル" />
+                  <TableColumn fx:id="cullumnYear" minWidth="0.0" prefWidth="123.0" text="今年" />
+                  <TableColumn fx:id="cullumnMonth" minWidth="0.0" prefWidth="110.0" text="今月" />
+                  <TableColumn fx:id="cullumnDay" minWidth="0.0" prefWidth="110.0" text="今日" />
+               </columns>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
