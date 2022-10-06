@@ -58,7 +58,7 @@ public class GraphController {
 	    	if(i==0  ||  day.equals("1")) label += month+"月";
 	    	label += day+"日";
 	    	if(cnt == -1) {
-	    		data.getData().add(new XYChart.Data<>(day+"日", 0));
+	    		data.getData().add(new XYChart.Data<>(label, 0));
 //	    		data.getData().add(new XYChart.Data<>(label, i));	//※仮
 	    	} else {
 	    		data.getData().add(new XYChart.Data<>(label, cnt));

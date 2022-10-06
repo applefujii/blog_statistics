@@ -35,7 +35,7 @@ public class ArticleTabController extends TableTabController {
     /** 初期化 */
     @FXML
     public void initialize() {
-    	super.initialize();
+    	super.initialize("article");
     	
     	this.setContextMenu(tableView);
     	

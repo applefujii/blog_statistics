@@ -29,12 +29,15 @@ abstract public class TableTabController extends TabController {
 	
 	protected ObservableList<AccessData> dataList;		//表示用
 	protected ObservableList<AccessData> saveList;		//保存用
+	
+	private String place;
     
     
     
-    public void initialize() {
+    public void initialize( String place ) {
     	dataList = FXCollections.observableArrayList();
     	saveList = FXCollections.observableArrayList();
+    	this.place = place;
     }
 
     abstract public boolean createTable( AccessCount ac );
@@ -72,7 +75,7 @@ abstract public class TableTabController extends TabController {
     	  //グラフウィンドウを開く
     	  menui[0].addEventHandler( ActionEvent.ACTION , e -> {
     		  AccessData ad = table.getSelectionModel().selectedItemProperty().get();
-    		  mainController.showGraph("article", Integer.toString(ad.getId()));
+    		  mainController.showGraph(place, Integer.toString(ad.getId()));
 	  	  });
     	  //ブラウザで開く
     	  menui[1].addEventHandler( ActionEvent.ACTION , new EventHandler<ActionEvent>() {

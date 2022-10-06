@@ -30,7 +30,7 @@ public class SiteTabController extends TableTabController {
     /** 初期化 */
     @FXML
     public void initialize() {
-    	super.initialize();
+    	super.initialize("site");
     	
     	this.setContextMenu(tableView);
     	

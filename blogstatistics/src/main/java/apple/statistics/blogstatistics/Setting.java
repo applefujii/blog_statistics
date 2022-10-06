@@ -21,7 +21,7 @@ public class Setting{
     
 	private static ResourceBundle rb;
 	public static final String sourcePath;
-	private static String blogDbPath = "C:\\Users\\apple_umeda\\Desktop\\blog_terminal_db.sqlite3";
+	private static String blogDbPath = ".\\blog_terminal_db.sqlite3";
 	private static String siteUrl = "";
 
     

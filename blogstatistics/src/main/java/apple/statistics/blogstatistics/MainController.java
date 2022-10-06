@@ -205,8 +205,9 @@ public class MainController {
 			if(dir.size() == 0) progressBar.setProgress(i/(double)list.getLength());	//プログレスバー更新
 			Element element = (Element)list.item(i);		//今回のデータ
 			dir.push(element.getAttribute("value") );		//今の階層の名前をスタックに追加
-			String[] s = dir.toArray(new String[dir.size() -1]);	
-			ac.addCount( Integer.valueOf(element.getAttribute("count")), s );		//アクセス数を保存
+			String[] s = dir.toArray(new String[dir.size() -1]);
+			int tmp = Integer.valueOf(element.getAttribute("count"));
+			ac.addCount( tmp, s );		//アクセス数を保存
 			if(dir.size() < 5) _loadFile(element.getElementsByTagName(DIR_NAME[dir.size()]), dir);		//再起で次の階層へ
 			dir.pop();		//今の階層の名前を削除
     	}

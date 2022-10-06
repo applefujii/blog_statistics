@@ -35,7 +35,7 @@ public class BlogTabController extends TableTabController {
     /** 初期化 */
     @FXML
     public void initialize() {
-    	super.initialize();
+    	super.initialize("blog");
     	
     	this.setContextMenu(tableView);
     	
@@ -55,7 +55,7 @@ public class BlogTabController extends TableTabController {
     	//TableViewにデータをセット
     	dataList.clear();
     	final String URL 
-        = "jdbc:sqlite:C:\\Users\\apple_umeda\\Desktop\\blog_terminal_db.sqlite3";
+        = "jdbc:sqlite:" + Setting.getBlogDbPath();
 //        final String USER = "";
 //        final String PASS = "";
 		String sql = "select count(*) as countCul from blog;";

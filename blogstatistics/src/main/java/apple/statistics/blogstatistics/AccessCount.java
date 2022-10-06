@@ -75,8 +75,21 @@ public class AccessCount {
 //		ad.setUserId(getUserId(ad.getId()));
 		_setAccountDataFromDb(ad, Integer.parseInt(dir2), dir1);
 		
+		if(dir2.equals("2")) {
+			System.out.println("in");
+		}
 		for( String d: dir ) {
 			tMap = tMap.map.get(d);
+		}
+		
+		System.out.println(ad.getName());
+		System.out.println(ad.getId());
+		if( tMap == null ) {
+			ad.setTotal(0);
+			ad.setYear(0);
+			ad.setMonth(0);
+			ad.setDay(0);
+			return ad;
 		}
 		
 		ad.setTotal(tMap.value);
@@ -113,6 +126,14 @@ public class AccessCount {
             ps.setInt(1,id);
             
             try(ResultSet rs = ps.executeQuery()){
+            	
+            	if( rs.isAfterLast() ) {
+            		ad.setName("削除");
+            		ad.setUserId("-1");
+	            	if(section == "article") ad.setId(-1);
+	            	return;
+            	}
+            	
             	//取得完了
             	ad.setName(rs.getString("title"));
             	//ブログの場合はAccessData.idにアカウントのIDを代入
